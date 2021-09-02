@@ -11,10 +11,19 @@ function BodyPage(props) {
     fetch(theendpoint)
       .then((result) => result.json())
       .then((siteData) => {
-        setChildrenData(siteData.data.children);
-        console.log(childrenData.length);
-        console.log(childrenData);
-        console.log(typeof childrenData);
+        setChildrenData(
+          siteData.data
+            ? siteData.data.children
+            : [
+                {
+                  data: {
+                    title: "This is not a valid subreddit",
+                    author: "",
+                    url: "",
+                  },
+                },
+              ]
+        );
       });
   }, [theendpoint]);
 

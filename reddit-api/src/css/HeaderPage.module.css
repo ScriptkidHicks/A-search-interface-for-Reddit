@@ -13,20 +13,23 @@
 }
 
 h2 {
-  background-color: black;
-  grid-row-start: 3;
-  grid-column-start: 2;
+  padding-left: 20px;
+  grid-row-start: 2;
+  grid-column-start: 1;
   grid-column-end: 8;
 }
 
 .subreddit {
-  grid-column-start: 9;
+  padding-left: 10px;
+  grid-column-start: 7;
   grid-column-end: 11;
   grid-row-start: 4;
 }
 
 .sorting {
-  grid-column-start: 13;
+  padding-left: 10px;
+  grid-column-start: 10;
+  grid-column-end: 12;
   grid-row-start: 3;
   grid-row-end: 4;
 }
@@ -45,9 +48,4 @@ h2 {
 .submitBtn:hover {
   background-color: greenyellow;
   color: black;
-}
-
-.sortingLabels {
-  grid-row-start: 2;
-  grid-column-start: 12;
 }

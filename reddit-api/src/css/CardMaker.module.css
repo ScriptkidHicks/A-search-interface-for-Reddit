@@ -14,9 +14,9 @@
 
 .author {
   grid-row-start: 3;
-  grid-row-end: 6;
-  grid-column-start: 2;
-  grid-column-end: 8;
+  grid-row-end: 9;
+  grid-column-start: 1;
+  grid-column-end: 9;
   border: rgb(2, 70, 2) solid 1px;
   border-radius: 10px;
   background-color: black;

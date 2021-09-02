@@ -15,12 +15,11 @@ function HeaderPage(props) {
   return (
     <div>
       <header className={classes.mainContainer}>
-        <h2>Welcome to the Maleable Reddit API</h2>
+        <h2>Welcome to the Reddit API search wrapper</h2>
         <div className={classes.subreddit}>
           <label htmlFor="subreddit">Sub-Reddit</label>
           <input type="text" name="subreddit" onChange={changeHandler}></input>
         </div>
-        <p className={classes.sortingLabels}>Select a sorting type</p>
         <div className={classes.sorting} onChange={onChangeValue}>
           <input type="radio" value="top" name="sorting" /> Top
           <br />
