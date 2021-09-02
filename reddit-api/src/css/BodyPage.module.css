@@ -1,0 +1,8 @@
+.bodyFrame {
+  background-color: greenyellow;
+  height: 800px;
+  margin: auto;
+  width: 95%;
+  border: black solid 4px;
+  border-radius: 20px;
+}

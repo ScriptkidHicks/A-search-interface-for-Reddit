@@ -1,0 +1,53 @@
+.mainContainer {
+  height: 100px;
+  margin: auto;
+  width: 95%;
+  display: grid;
+  grid-template-columns: repeat(20, 5%);
+  grid-template-rows: repeat(10, 10%);
+  background-color: rgb(2, 70, 2);
+  color: white;
+  border: 4px solid black;
+  border-radius: 10px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+h2 {
+  background-color: black;
+  grid-row-start: 3;
+  grid-column-start: 2;
+  grid-column-end: 8;
+}
+
+.subreddit {
+  grid-column-start: 9;
+  grid-column-end: 11;
+  grid-row-start: 4;
+}
+
+.sorting {
+  grid-column-start: 13;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+.submitBtn {
+  grid-column-start: 18;
+  grid-row-start: 6;
+  grid-row-end: 9;
+  height: 85%;
+  border: 2px solid black;
+  border-radius: 8px;
+  background-color: green;
+  color: white;
+}
+
+.submitBtn:hover {
+  background-color: greenyellow;
+  color: black;
+}
+
+.sortingLabels {
+  grid-row-start: 2;
+  grid-column-start: 12;
+}
