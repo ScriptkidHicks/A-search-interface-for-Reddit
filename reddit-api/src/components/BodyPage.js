@@ -5,24 +5,28 @@ import { useEffect, useState } from "react";
 function BodyPage(props) {
   let theendpoint = props.endpoint;
 
-  const [theAuthor, setTheAuthor] = useState(null);
-  const [theLink, setTheLink] = useState(null);
-  const [theTitle, setTheTitle] = useState(null);
+  const [childrenData, setChildrenData] = useState([]);
 
   useEffect(() => {
     fetch(theendpoint)
       .then((result) => result.json())
       .then((siteData) => {
-        console.log(siteData.data.children[0].data.author);
-        setTheAuthor(siteData.data.children[0].data.author);
-        setTheTitle(siteData.data.children[0].data.title);
-        setTheLink(siteData.data.children[0].data.url);
+        setChildrenData(siteData.data.children);
+        console.log(childrenData.length);
+        console.log(childrenData);
+        console.log(typeof childrenData);
       });
-  });
+  }, [theendpoint]);
 
   return (
     <div className={classes.bodyFrame}>
-      <CardMaker redditLink={theLink} author={theAuthor} titleCard={theTitle} />
+      {childrenData.map((child) => (
+        <CardMaker
+          titleCard={child.data.title}
+          redditLink={child.data.url}
+          author={child.data.author}
+        />
+      ))}
     </div>
   );
 }

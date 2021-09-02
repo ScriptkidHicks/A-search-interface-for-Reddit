@@ -1,8 +1,6 @@
 import classes from "../css/CardMaker.module.css";
 
 function CardMaker(props) {
-  console.log(props.titleCard);
-  console.log(props.author);
   return (
     <div className={classes.cardFrame}>
       <div className={classes.author}>Author: {props.author}</div>

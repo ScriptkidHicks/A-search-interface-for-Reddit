@@ -3,8 +3,13 @@ import { useState } from "react";
 
 function HeaderPage(props) {
   const [subred, setSubred] = useState("");
+  const [sorting, setSorting] = useState("");
   function changeHandler(event) {
     setSubred(event.target.value);
+  }
+
+  function onChangeValue(event) {
+    setSorting(event.target.value);
   }
 
   return (
@@ -16,44 +21,18 @@ function HeaderPage(props) {
           <input type="text" name="subreddit" onChange={changeHandler}></input>
         </div>
         <p className={classes.sortingLabels}>Select a sorting type</p>
-        <div className={classes.sorting}>
-          <div>
-            <input
-              onChange={changeHandler}
-              type="radio"
-              id="hot"
-              name="sortingType"
-              value="hot"
-              checked
-            ></input>
-            <label htmlFor="hot">Hot</label>
-          </div>
-          <div>
-            <input
-              type="radio"
-              id="new"
-              name="sortingType"
-              value="new"
-              checked
-            ></input>
-            <label htmlFor="new">New</label>
-          </div>
-          <div>
-            <input
-              type="radio"
-              id="top"
-              name="sortingType"
-              value="top"
-              checked
-            ></input>
-            <label htmlFor="top">Top</label>
-          </div>
+        <div className={classes.sorting} onChange={onChangeValue}>
+          <input type="radio" value="top" name="sorting" /> Top
+          <br />
+          <input type="radio" value="new" name="sorting" /> New
+          <br />
+          <input type="radio" value="hot" name="sorting" /> Hot
         </div>
         <button
           className={classes.submitBtn}
           onClick={() => {
-            props.updateSubreddit("DIY");
-            console.log(subred);
+            props.updateSubreddit(subred);
+            props.updateSorting(sorting);
           }}
         >
           Submit
